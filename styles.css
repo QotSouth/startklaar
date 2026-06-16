@@ -480,12 +480,17 @@ a { color: var(--purple); text-decoration: none; }
   gap: 30px;
   box-shadow: var(--shadow-lg);
 }
-.website-content { text-align: center; }
+.website-content { text-align: left; }
 .website-content h2 { color: #fff; }
 .website-lead { font-size: 1.15rem; font-weight: 600; margin-top: 8px; color: rgba(255,255,255,.9); }
 .website-desc { color: rgba(255,255,255,.85); margin: 4px 0 4px; max-width: 38ch; }
-.website-content .website-desc { margin-inline: auto; }
-@media (min-width: 900px) { .website-content .website-desc { margin-inline: 0; } }
+.website-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 22px auto 0;
+  max-width: 620px;
+}
 .website-box .price span { color: rgba(255,255,255,.8); }
 .website-box .delivery { background: rgba(255,255,255,.14); color: #fff; }
 .website-lists { display: grid; gap: 26px; }
