@@ -647,6 +647,7 @@ a { color: var(--purple); text-decoration: none; }
   gap: 16px;
 }
 .tier-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
+.tier-note { font-size: .78rem; font-weight: 500; color: rgba(255,255,255,.7); margin-left: 6px; white-space: nowrap; }
 .tier-price { font-weight: 800; color: #fff; font-size: 1.25rem; white-space: nowrap; }
 .tier-price span { font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.75); margin-left: 4px; }
 .tier-main { padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.18); }
