@@ -204,7 +204,7 @@
                 <li>1 feedbackronde</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-cta-outline btn-block">Ik kies START</a>
+            <a href="#contact" class="btn btn-cta-outline btn-block" data-pakket="START">Ik kies START</a>
           </article>
 
           <!-- STARTKLAAR -->
@@ -239,7 +239,7 @@
                 <li>2 feedbackrondes</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-cta btn-block">Ik kies STARTKLAAR</a>
+            <a href="#contact" class="btn btn-cta btn-block" data-pakket="STARTKLAAR">Ik kies STARTKLAAR</a>
           </article>
 
           <!-- ZICHTBAAR -->
@@ -276,7 +276,7 @@
                 <li>2 feedbackrondes</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-cta-outline btn-block">Ik kies ZICHTBAAR</a>
+            <a href="#contact" class="btn btn-cta-outline btn-block" data-pakket="ZICHTBAAR">Ik kies ZICHTBAAR</a>
           </article>
 
         </div>
@@ -293,7 +293,7 @@
             <p class="price price-white">&euro;995 <span>excl. btw</span></p>
             <p class="website-desc">Voor ondernemers die ook online professioneel zichtbaar willen zijn.</p>
             <p class="delivery"><strong>Levering:</strong> 10 werkdagen</p>
-            <a href="#contact" class="btn btn-cta btn-lg">Voeg een website toe</a>
+            <a href="#contact" class="btn btn-cta btn-lg" data-pakket="WEBSITE">Voeg een website toe</a>
           </div>
           <div class="website-lists">
             <div>
@@ -479,6 +479,19 @@
       <p class="footer-copy">&copy; 2026 Startklaar. Alle rechten voorbehouden.</p>
     </div>
   </footer>
+
+  <!-- Pakketkeuze vooraf invullen op basis van de aangeklikte knop -->
+  <script>
+    (function () {
+      var select = document.getElementById('pakket');
+      if (!select) return;
+      document.querySelectorAll('[data-pakket]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          select.value = btn.getAttribute('data-pakket');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
