@@ -321,7 +321,7 @@
             </div>
           </div>
           <div class="website-notes">
-            <p>Krachtigere website nodig met meerdere pagina&rsquo;s? Extra pagina&rsquo;s kunnen vanaf &euro;250 per pagina.</p>
+            <p>Meer ruimte nodig? <strong>Website Basis</strong> &euro;1.495 (tot 5 pagina&rsquo;s) of <strong>Website Plus</strong> &euro;1.995 (tot 10 pagina&rsquo;s).</p>
             <p>Jaarlijkse hosting en domeinnaam vanaf &euro;99/jaar excl. btw.</p>
           </div>
         </div>
@@ -444,12 +444,10 @@
           <label for="website-veld">Website
             <select id="website-veld" name="Website">
               <option value="" selected>Kies je website</option>
-              <option value="Ja, een one-page website (vanaf &euro;995)">Ik wil een website (one-page, vanaf &euro;995)</option>
+              <option value="Website One-page (&euro;995)" data-prijs="995">Website One-page — &euro;995</option>
+              <option value="Website Basis (&euro;1.495, tot 5 pagina's)" data-prijs="1495">Website Basis — &euro;1.495 (tot 5 pagina&rsquo;s)</option>
+              <option value="Website Plus (&euro;1.995, tot 10 pagina's)" data-prijs="1995">Website Plus — &euro;1.995 (tot 10 pagina&rsquo;s)</option>
             </select>
-          </label>
-
-          <label for="extra-paginas">Extra pagina&rsquo;s (+&euro;250 per pagina)
-            <input type="number" id="extra-paginas" name="Extra pagina's" min="0" step="1" value="0" inputmode="numeric" />
           </label>
 
           <p class="website-total" id="website-total" hidden></p>
@@ -485,7 +483,6 @@
     (function () {
       var select = document.getElementById('pakket');
       var website = document.getElementById('website-veld');
-      var pages = document.getElementById('extra-paginas');
       var totalOut = document.getElementById('website-total');
       var totalField = document.getElementById('website-total-field');
 
@@ -493,15 +490,13 @@
 
       function updateTotal() {
         if (!website) return;
-        var extra = pages ? Math.max(0, parseInt(pages.value, 10) || 0) : 0;
-        if (extra > 0 && website.selectedIndex === 0) website.selectedIndex = 1;
-        var hasBase = website.selectedIndex > 0 || extra > 0;
-        var total = (hasBase ? 995 : 0) + extra * 250;
-        if (totalField) totalField.value = total > 0 ? fmt(total) + ' excl. btw' : '';
+        var opt = website.options[website.selectedIndex];
+        var price = opt ? (parseInt(opt.getAttribute('data-prijs'), 10) || 0) : 0;
+        if (totalField) totalField.value = price > 0 ? fmt(price) + ' excl. btw' : '';
         if (totalOut) {
-          if (total > 0) {
+          if (price > 0) {
             totalOut.hidden = false;
-            totalOut.textContent = 'Websiteprijs: ' + fmt(total) + ' excl. btw';
+            totalOut.textContent = 'Websiteprijs: ' + fmt(price) + ' excl. btw';
           } else {
             totalOut.hidden = true;
             totalOut.textContent = '';
@@ -525,7 +520,6 @@
         });
         website.addEventListener('change', updateTotal);
       }
-      if (pages) pages.addEventListener('input', updateTotal);
       updateTotal();
     })();
   </script>
