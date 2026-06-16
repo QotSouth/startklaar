@@ -450,8 +450,6 @@
             </select>
           </label>
 
-          <p class="website-total" id="website-total" hidden></p>
-          <input type="hidden" id="website-total-field" name="Websiteprijs" />
           <p class="form-hint">Jaarlijkse hosting en domeinnaam vanaf &euro;99/jaar excl. btw.</p>
 
           <label for="bericht">Bericht
@@ -483,26 +481,6 @@
     (function () {
       var select = document.getElementById('pakket');
       var website = document.getElementById('website-veld');
-      var totalOut = document.getElementById('website-total');
-      var totalField = document.getElementById('website-total-field');
-
-      function fmt(n) { return '€' + n.toLocaleString('nl-NL'); }
-
-      function updateTotal() {
-        if (!website) return;
-        var opt = website.options[website.selectedIndex];
-        var price = opt ? (parseInt(opt.getAttribute('data-prijs'), 10) || 0) : 0;
-        if (totalField) totalField.value = price > 0 ? fmt(price) + ' excl. btw' : '';
-        if (totalOut) {
-          if (price > 0) {
-            totalOut.hidden = false;
-            totalOut.textContent = 'Websiteprijs: ' + fmt(price) + ' excl. btw';
-          } else {
-            totalOut.hidden = true;
-            totalOut.textContent = '';
-          }
-        }
-      }
 
       if (select) {
         document.querySelectorAll('[data-pakket]').forEach(function (btn) {
@@ -515,12 +493,9 @@
         document.querySelectorAll('[data-website]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             website.selectedIndex = 1;
-            updateTotal();
           });
         });
-        website.addEventListener('change', updateTotal);
       }
-      updateTotal();
     })();
   </script>
 
