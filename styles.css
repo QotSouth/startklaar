@@ -305,6 +305,89 @@ a { color: var(--purple); text-decoration: none; }
 .features-no li::before { content: "✕"; color: #c9c3d6; }
 .features-2col { gap: 12px; }
 
+/* ---------- Pakket-pijlers ---------- */
+.pillars {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 20px;
+  flex: 1;
+}
+.pillar-label {
+  font-size: .74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--purple);
+  margin-bottom: 7px;
+}
+.pillar ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+.pillar li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--ink);
+  font-size: .97rem;
+}
+.pillar li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 0;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* ---------- Uitklapbare details in pakketkaart ---------- */
+.card-details { margin-bottom: 18px; }
+.card-details summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--purple);
+  text-align: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.card-details summary::-webkit-details-marker { display: none; }
+.card-details summary::after {
+  content: "+";
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.card-details[open] summary::after { content: "\2013"; }
+.card-details .features { margin: 6px 0 0; gap: 9px; flex: none; }
+.card-details .features li { font-size: .94rem; }
+.detail-group-label {
+  font-size: .74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--purple);
+  margin: 14px 0 8px;
+}
+.sub-list {
+  list-style: none;
+  margin: 8px 0 2px;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+}
+.sub-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.sub-list li::before {
+  content: "\2013";
+  position: absolute; left: 0; top: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 /* ---------- Extra mogelijkheden ---------- */
 .extras {
   margin-top: 34px;
@@ -343,6 +426,9 @@ a { color: var(--purple); text-decoration: none; }
 .website-content { text-align: center; }
 .website-content h2 { color: #fff; }
 .website-lead { font-size: 1.15rem; font-weight: 600; margin-top: 8px; color: rgba(255,255,255,.9); }
+.website-desc { color: rgba(255,255,255,.85); margin: 4px 0 4px; max-width: 38ch; }
+.website-content .website-desc { margin-inline: auto; }
+@media (min-width: 900px) { .website-content .website-desc { margin-inline: 0; } }
 .website-box .price span { color: rgba(255,255,255,.8); }
 .website-box .delivery { background: rgba(255,255,255,.14); color: #fff; }
 .website-lists { display: grid; gap: 26px; }
