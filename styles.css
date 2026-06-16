@@ -273,21 +273,21 @@ a { color: var(--purple); text-decoration: none; }
   flex-direction: column;
 }
 .card-featured {
-  border: 2px solid var(--purple);
+  border: 2px solid var(--orange);
   box-shadow: var(--shadow-lg);
 }
 .badge {
   position: absolute;
   top: -13px; left: 50%;
   transform: translateX(-50%);
-  background: var(--purple);
+  background: var(--orange);
   color: #fff;
   font-size: .8rem;
   font-weight: 700;
   padding: 6px 16px;
   border-radius: 999px;
   white-space: nowrap;
-  box-shadow: 0 6px 14px rgba(107,47,181,.35);
+  box-shadow: 0 6px 14px rgba(255,106,43,.35);
 }
 .card-head { text-align: center; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .card-head h3 { margin-top: 4px; }
