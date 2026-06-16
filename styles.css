@@ -539,12 +539,12 @@ a { color: var(--purple); text-decoration: none; }
 .step-num {
   display: grid; place-items: center;
   width: 46px; height: 46px;
-  margin: 0 auto 14px;
+  margin: 0 auto 20px;
   background: var(--purple); color: #fff;
   border-radius: 50%;
   font-weight: 800; font-size: 1.2rem;
 }
-.step-title { font-size: 1.1rem; margin-bottom: 6px; color: var(--ink); }
+.step-title { font-size: 1.1rem; margin-bottom: 12px; color: var(--ink); }
 .step p { color: var(--body); font-size: .96rem; }
 
 /* ---------- Waarom ---------- */
