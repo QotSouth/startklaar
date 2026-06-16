@@ -351,8 +351,40 @@ a { color: var(--purple); text-decoration: none; }
   font-weight: 800;
 }
 
+/* ---------- Kernresultaat ---------- */
+.result {
+  background: var(--purple-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 20px 0 18px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.result-label {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--purple);
+  margin-bottom: 6px;
+}
+.result-text {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
 /* ---------- Uitklapbare details in pakketkaart ---------- */
 .card-details { margin-bottom: 18px; }
+.detail-delivery {
+  margin-top: 14px;
+  font-size: .92rem;
+  color: var(--body);
+}
 .card-details summary {
   cursor: pointer;
   list-style: none;
