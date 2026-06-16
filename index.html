@@ -453,7 +453,7 @@
           </label>
 
           <p class="website-total" id="website-total" hidden></p>
-          <input type="hidden" id="website-total-field" name="Geschatte websiteprijs" />
+          <input type="hidden" id="website-total-field" name="Websiteprijs" />
           <p class="form-hint">Jaarlijkse hosting en domeinnaam vanaf &euro;99/jaar excl. btw.</p>
 
           <label for="bericht">Bericht
@@ -500,7 +500,7 @@
         if (totalOut) {
           if (total > 0) {
             totalOut.hidden = false;
-            totalOut.textContent = 'Geschatte websiteprijs: ' + fmt(total) + ' excl. btw';
+            totalOut.textContent = 'Websiteprijs: ' + fmt(total) + ' excl. btw';
           } else {
             totalOut.hidden = true;
             totalOut.textContent = '';
