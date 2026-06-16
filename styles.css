@@ -510,7 +510,7 @@ a { color: var(--purple); text-decoration: none; }
 @media (min-width: 900px) {
   .main-nav { display: flex; }
   .recognize-list { grid-template-columns: repeat(4, 1fr); }
-  .needs-grid { grid-template-columns: repeat(4, 1fr); }
+  .needs-grid { grid-template-columns: repeat(3, 1fr); }
   .cards { grid-template-columns: repeat(3, 1fr); align-items: start; }
   .card-featured { transform: translateY(-12px); }
   .website-box { grid-template-columns: 1fr 1.2fr; align-items: center; padding: 48px 44px; }
