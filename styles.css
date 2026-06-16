@@ -484,14 +484,15 @@ a { color: var(--purple); text-decoration: none; }
 .website-content h2 { color: #fff; text-align: left; }
 .website-lead { font-size: 1.15rem; font-weight: 600; margin-top: 8px; color: rgba(255,255,255,.9); }
 .website-desc { color: rgba(255,255,255,.85); margin: 4px 0 4px; max-width: 38ch; }
-.website-note {
+.website-notes {
   grid-column: 1 / -1;
-  color: rgba(255,255,255,.82);
-  font-size: .95rem;
   margin-top: 6px;
   padding-top: 22px;
   border-top: 1px solid rgba(255,255,255,.18);
+  display: grid;
+  gap: 8px;
 }
+.website-notes p { color: rgba(255,255,255,.82); font-size: .95rem; }
 .website-box .price span { color: rgba(255,255,255,.8); }
 .website-box .delivery { background: rgba(255,255,255,.14); color: #fff; }
 .website-lists { display: grid; gap: 26px; }
@@ -639,6 +640,7 @@ a { color: var(--purple); text-decoration: none; }
   font-weight: 700;
   text-align: center;
 }
+.form-hint { color: var(--muted); font-size: .85rem; margin-top: -6px; }
 .form-note { text-align: center; color: var(--muted); font-size: .85rem; }
 
 /* ---------- Footer ---------- */
