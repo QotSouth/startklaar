@@ -784,7 +784,7 @@ a { color: var(--purple); text-decoration: none; }
   .hero-inner {
     display: grid;
     grid-template-columns: 1.05fr .95fr;
-    align-items: center;
+    align-items: start;
     gap: 44px;
     text-align: left;
   }
@@ -792,7 +792,13 @@ a { color: var(--purple); text-decoration: none; }
   .hero-text .hero-sub { margin-left: 0; margin-right: 0; }
   .hero-text .hero-ctas { margin-left: 0; justify-content: flex-start; }
   .hero-text .hero-points { justify-content: flex-start; }
-  .hero-visual { display: block; position: relative; padding: 10px 30px 40px 10px; }
+  .hero-visual { display: block; position: relative; padding: 30px 30px 40px 10px; }
+}
+
+/* CTA-knoppen op 1 lijn zodra er genoeg breedte is */
+@media (min-width: 1040px) {
+  .hero-text .hero-ctas { flex-wrap: nowrap; gap: 12px; }
+  .hero-text .hero-ctas .btn { white-space: nowrap; flex: 0 0 auto; }
 }
 
 @media (min-width: 900px) {
