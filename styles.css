@@ -267,7 +267,7 @@ a { color: var(--purple); text-decoration: none; }
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 30px 26px;
+  padding: 42px 26px 30px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
@@ -289,16 +289,23 @@ a { color: var(--purple); text-decoration: none; }
   white-space: nowrap;
   box-shadow: 0 6px 14px rgba(107,47,181,.35);
 }
-.card-head { text-align: center; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.card-head { text-align: center; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.card-head h3 { margin-top: 4px; }
 .price {
   font-size: 2.1rem;
   font-weight: 800;
   color: var(--purple);
-  margin: 10px 0 6px;
+  margin: 18px 0 0;
 }
 .price span { font-size: .85rem; font-weight: 600; color: var(--muted); }
 .price-white { color: #fff; }
-.card-tagline { color: var(--muted); font-size: .95rem; }
+.card-tagline { color: var(--muted); font-size: .95rem; margin-top: 16px; }
+
+/* ---------- Pakketkaart-inhoud (altijd zichtbaar) ---------- */
+.card-content { flex: 1; margin-bottom: 22px; }
+.card-content .features { flex: none; margin: 6px 0 0; gap: 9px; }
+.card-content .features li { font-size: .95rem; }
+.card-content .detail-group-label:first-child { margin-top: 18px; }
 
 .features {
   list-style: none;
