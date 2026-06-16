@@ -299,6 +299,7 @@ a { color: var(--purple); text-decoration: none; }
 }
 .price span { font-size: .85rem; font-weight: 600; color: var(--muted); }
 .price-white { color: #fff; }
+.card-featured .price { color: var(--orange); }
 .card-tagline { color: var(--muted); font-size: .95rem; margin-top: 16px; }
 
 /* ---------- Pakketkaart-inhoud (altijd zichtbaar) ---------- */
