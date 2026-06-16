@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startklaar — Admin intakes</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#6b2fb5" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="intake.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236b2fb5'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='62' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="intake-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Startklaar home">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">Startklaar</span>
+      </a>
+      <span class="header-tag">Admin · intakes</span>
+    </div>
+  </header>
+
+  <main class="intake-main">
+    <div class="container">
+      <header class="intake-head">
+        <h1>Aanvragen</h1>
+        <p>Overzicht van alle ingediende intakes op dit toestel. Exporteer elke aanvraag naar JSON of PDF om mee te geven aan ChatGPT of Claude.</p>
+      </header>
+
+      <div class="admin-toolbar">
+        <span id="count-pill" class="count-pill">0 aanvragen</span>
+        <div class="admin-toolbar-actions">
+          <button type="button" id="export-all" class="btn btn-cta-outline btn-sm">Exporteer alles (JSON)</button>
+          <button type="button" id="clear-all" class="btn btn-danger btn-sm">Alles wissen</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table" id="admin-table">
+          <thead>
+            <tr>
+              <th>Naam</th>
+              <th>Bedrijfsnaam</th>
+              <th>Pakket</th>
+              <th>Datum</th>
+              <th class="col-actions">Acties</th>
+            </tr>
+          </thead>
+          <tbody id="admin-body"></tbody>
+        </table>
+        <p id="empty-state" class="empty-state" hidden>Nog geen aanvragen. Ze verschijnen hier zodra iemand het <a href="intake.html">intakeformulier</a> verzendt op dit toestel.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Detailweergave -->
+  <div class="modal" id="detail-modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <div class="modal-head">
+        <h2 id="detail-title">Aanvraag</h2>
+        <button type="button" class="modal-close" data-close aria-label="Sluiten">&times;</button>
+      </div>
+      <div class="modal-body" id="detail-body"></div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-cta-outline btn-sm" id="detail-json">JSON exporteren</button>
+        <button type="button" class="btn btn-cta btn-sm" id="detail-pdf">PDF exporteren</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

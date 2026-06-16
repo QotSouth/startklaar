@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startklaar — Intakeformulier</title>
+  <meta name="description" content="Vul het intakeformulier in zodat we met jouw project aan de slag kunnen." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#6b2fb5" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="intake.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236b2fb5'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='62' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="intake-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Startklaar home">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">Startklaar</span>
+      </a>
+      <span class="header-tag">Intakeformulier</span>
+    </div>
+  </header>
+
+  <main class="intake-main">
+    <div class="container intake-container">
+
+      <!-- ============ FORMULIER ============ -->
+      <section id="form-view">
+        <header class="intake-head">
+          <h1>Vertel ons over jouw bedrijf</h1>
+          <p>Vul dit formulier in zodat we met jouw project aan de slag kunnen. Hoe duidelijker je antwoorden, hoe scherper het eindresultaat. Velden met <span class="req">*</span> zijn verplicht.</p>
+        </header>
+
+        <form id="intake-form" novalidate>
+
+          <!-- PERSOONLIJKE GEGEVENS -->
+          <fieldset class="block">
+            <legend>Persoonlijke gegevens</legend>
+            <div class="grid-2">
+              <label>Naam <span class="req">*</span>
+                <input type="text" name="naam" required autocomplete="name" />
+              </label>
+              <label>Bedrijfsnaam <span class="req">*</span>
+                <input type="text" name="bedrijfsnaam" required autocomplete="organization" />
+              </label>
+              <label>E-mail <span class="req">*</span>
+                <input type="email" name="email" required autocomplete="email" />
+              </label>
+              <label>Telefoonnummer <span class="req">*</span>
+                <input type="tel" name="telefoon" required autocomplete="tel" />
+              </label>
+              <label>Website <span class="opt">(optioneel)</span>
+                <input type="url" name="website" placeholder="https://" />
+              </label>
+              <label>Sociale media links <span class="opt">(optioneel)</span>
+                <input type="text" name="social" placeholder="Instagram, LinkedIn, Facebook…" />
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- OVER JE BEDRIJF -->
+          <fieldset class="block">
+            <legend>Over je bedrijf</legend>
+            <label>Wat doe je? <span class="req">*</span>
+              <textarea name="wat_doe_je" rows="3" required></textarea>
+            </label>
+            <label>Voor wie werk je?
+              <textarea name="voor_wie" rows="3"></textarea>
+            </label>
+            <label>Welke problemen los je op?
+              <textarea name="problemen" rows="3"></textarea>
+            </label>
+            <label>Waarom kiezen klanten voor jou?
+              <textarea name="waarom_jou" rows="3"></textarea>
+            </label>
+            <label>Wat maakt jouw bedrijf anders?
+              <textarea name="anders" rows="3"></textarea>
+            </label>
+            <label>Wat wil je dat klanten onthouden?
+              <textarea name="onthouden" rows="3"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- DOELGROEP -->
+          <fieldset class="block">
+            <legend>Doelgroep</legend>
+            <label>Beschrijf je ideale klant.
+              <textarea name="ideale_klant" rows="3"></textarea>
+            </label>
+            <p class="field-label">Werk je vooral voor: <span class="opt">(meerdere mogelijk)</span></p>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="doelgroep" value="Particulieren" /> <span>Particulieren</span></label>
+              <label class="choice"><input type="checkbox" name="doelgroep" value="Zelfstandigen" /> <span>Zelfstandigen</span></label>
+              <label class="choice"><input type="checkbox" name="doelgroep" value="KMO's" /> <span>KMO&rsquo;s</span></label>
+              <label class="choice"><input type="checkbox" name="doelgroep" value="Grote bedrijven" /> <span>Grote bedrijven</span></label>
+            </div>
+          </fieldset>
+
+          <!-- STIJL -->
+          <fieldset class="block">
+            <legend>Stijl en uitstraling</legend>
+            <p class="field-label">Kies <strong>maximaal 3</strong> woorden die bij jouw bedrijf passen. <span id="stijl-count" class="counter">0/3</span></p>
+            <div class="choice-grid choice-grid-3" id="stijl-grid">
+              <label class="choice"><input type="checkbox" name="stijl" value="Professioneel" /> <span>Professioneel</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Betrouwbaar" /> <span>Betrouwbaar</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Modern" /> <span>Modern</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Minimalistisch" /> <span>Minimalistisch</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Premium" /> <span>Premium</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Luxe" /> <span>Luxe</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Speels" /> <span>Speels</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Creatief" /> <span>Creatief</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Vriendelijk" /> <span>Vriendelijk</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Persoonlijk" /> <span>Persoonlijk</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Zakelijk" /> <span>Zakelijk</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Toegankelijk" /> <span>Toegankelijk</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Innovatief" /> <span>Innovatief</span></label>
+              <label class="choice"><input type="checkbox" name="stijl" value="Ambachtelijk" /> <span>Ambachtelijk</span></label>
+            </div>
+          </fieldset>
+
+          <!-- KLEUREN -->
+          <fieldset class="block">
+            <legend>Kleuren</legend>
+            <label>Welke kleuren spreken je aan?
+              <textarea name="kleuren_aan" rows="2"></textarea>
+            </label>
+            <label>Welke kleuren wil je absoluut vermijden?
+              <textarea name="kleuren_vermijden" rows="2"></textarea>
+            </label>
+            <label>Heb je voorbeelden van bedrijven waarvan je de uitstraling mooi vindt?
+              <textarea name="voorbeelden" rows="2"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- LOGO -->
+          <fieldset class="block">
+            <legend>Logo</legend>
+            <p class="field-label">Heb je al een logo?</p>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="heeft_logo" value="Ja" /> <span>Ja</span></label>
+              <label class="choice"><input type="radio" name="heeft_logo" value="Nee" checked /> <span>Nee</span></label>
+            </div>
+            <label class="upload">Logo uploaden <span class="opt">(indien aanwezig)</span>
+              <input type="file" name="logo_bestand" accept="image/*,.pdf,.ai,.svg" />
+            </label>
+          </fieldset>
+
+          <!-- MATERIAAL -->
+          <fieldset class="block">
+            <legend>Materiaal</legend>
+            <p class="field-label">Upload bestaand materiaal <span class="opt">(meerdere bestanden mogelijk)</span></p>
+            <div class="grid-2">
+              <label class="upload">Logo
+                <input type="file" name="mat_logo" multiple />
+              </label>
+              <label class="upload">Foto&rsquo;s
+                <input type="file" name="mat_fotos" accept="image/*" multiple />
+              </label>
+              <label class="upload">Visitekaartjes
+                <input type="file" name="mat_visitekaartjes" multiple />
+              </label>
+              <label class="upload">Bestaande documenten
+                <input type="file" name="mat_documenten" multiple />
+              </label>
+              <label class="upload">Flyers
+                <input type="file" name="mat_flyers" multiple />
+              </label>
+            </div>
+            <p class="upload-note">We registreren welke bestanden je toevoegt. Stuur de bestanden zelf daarna mee via e-mail of WeTransfer — zo blijven grote bestanden buiten dit formulier.</p>
+          </fieldset>
+
+          <!-- PAKKET -->
+          <fieldset class="block">
+            <legend>Gekozen pakket</legend>
+            <label>Welk pakket heb je gekozen? <span class="req">*</span>
+              <select name="pakket" required>
+                <option value="" selected>Kies een pakket</option>
+                <option value="START">START — &euro;295</option>
+                <option value="STARTKLAAR">STARTKLAAR — &euro;595</option>
+                <option value="ZICHTBAAR">ZICHTBAAR — &euro;895</option>
+                <option value="WEBSITE ONE-PAGE">Website One-page — &euro;995</option>
+                <option value="WEBSITE BASIS">Website Basis — &euro;1.495</option>
+                <option value="WEBSITE PLUS">Website Plus — &euro;1.995</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <p class="form-error" id="form-error" hidden>Vul de verplichte velden in om te verzenden.</p>
+          <button type="submit" class="btn btn-cta btn-lg btn-block">Verzend mijn intake</button>
+        </form>
+      </section>
+
+      <!-- ============ BEVESTIGING ============ -->
+      <section id="thanks-view" class="thanks" hidden>
+        <div class="thanks-card">
+          <div class="thanks-icon" aria-hidden="true">&check;</div>
+          <h1>Bedankt voor je aanvraag.</h1>
+          <p>Wij hebben je informatie goed ontvangen.</p>
+          <p>Je aanvraag wordt verwerkt zodra de betaling en alle benodigde informatie ontvangen zijn.</p>
+          <div class="thanks-actions">
+            <a href="index.html" class="btn btn-cta-outline">Terug naar de website</a>
+            <button type="button" id="download-json" class="btn btn-cta">Bewaar mijn antwoorden (JSON)</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-tagline">Professioneel zichtbaar in 5 werkdagen.</p>
+      <p class="footer-copy">&copy; 2026 Startklaar.</p>
+    </div>
+  </footer>
+
+  <script src="intake.js"></script>
+</body>
+</html>
