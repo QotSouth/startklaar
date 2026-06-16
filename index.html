@@ -494,6 +494,7 @@
       function updateTotal() {
         if (!website) return;
         var extra = pages ? Math.max(0, parseInt(pages.value, 10) || 0) : 0;
+        if (extra > 0 && website.selectedIndex === 0) website.selectedIndex = 1;
         var hasBase = website.selectedIndex > 0 || extra > 0;
         var total = (hasBase ? 995 : 0) + extra * 250;
         if (totalField) totalField.value = total > 0 ? fmt(total) + ' excl. btw' : '';
