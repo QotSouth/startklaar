@@ -433,19 +433,22 @@
 
           <label for="pakket">Gewenst pakket
             <select id="pakket" name="Gewenst pakket">
+              <option value="" selected>Kies je pakket</option>
               <option value="START">START — &euro;295</option>
-              <option value="STARTKLAAR" selected>STARTKLAAR — &euro;595</option>
+              <option value="STARTKLAAR">STARTKLAAR — &euro;595</option>
               <option value="ZICHTBAAR">ZICHTBAAR — &euro;895</option>
               <option value="Vraag">Ik heb een vraag</option>
             </select>
           </label>
 
-          <label class="checkbox-row" for="website-veld">
-            <input type="checkbox" id="website-veld" name="Website" value="Ja, ook een one-page website (vanaf &euro;995)" />
-            <span>Ik wil ook een website (one-page, vanaf &euro;995)</span>
+          <label for="website-veld">Website
+            <select id="website-veld" name="Website">
+              <option value="" selected>Kies je website</option>
+              <option value="Ja, een one-page website (vanaf &euro;995)">Ik wil een website (one-page, vanaf &euro;995)</option>
+            </select>
           </label>
 
-          <label for="bericht">Bericht (optioneel)
+          <label for="bericht">Bericht
             <textarea id="bericht" name="Bericht" rows="4"></textarea>
           </label>
 
@@ -484,7 +487,7 @@
       if (website) {
         document.querySelectorAll('[data-website]').forEach(function (btn) {
           btn.addEventListener('click', function () {
-            website.checked = true;
+            website.selectedIndex = 1;
           });
         });
       }

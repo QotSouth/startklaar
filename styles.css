@@ -631,22 +631,6 @@ a { color: var(--purple); text-decoration: none; }
   box-shadow: 0 0 0 3px rgba(107,47,181,.14);
 }
 .contact-form textarea { resize: vertical; }
-.checkbox-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  font-weight: 500;
-  color: var(--ink);
-  cursor: pointer;
-}
-.checkbox-row input {
-  width: 20px;
-  height: 20px;
-  flex: none;
-  accent-color: var(--orange);
-  cursor: pointer;
-}
 .form-note { text-align: center; color: var(--muted); font-size: .85rem; }
 
 /* ---------- Footer ---------- */
