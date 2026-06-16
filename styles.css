@@ -631,6 +631,14 @@ a { color: var(--purple); text-decoration: none; }
   box-shadow: 0 0 0 3px rgba(107,47,181,.14);
 }
 .contact-form textarea { resize: vertical; }
+.website-total {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  font-weight: 700;
+  text-align: center;
+}
 .form-note { text-align: center; color: var(--muted); font-size: .85rem; }
 
 /* ---------- Footer ---------- */

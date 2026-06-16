@@ -445,6 +445,13 @@
             </select>
           </label>
 
+          <label for="extra-paginas">Extra pagina&rsquo;s (+&euro;250 per pagina)
+            <input type="number" id="extra-paginas" name="Extra pagina's" min="0" step="1" value="0" inputmode="numeric" />
+          </label>
+
+          <p class="website-total" id="website-total" hidden></p>
+          <input type="hidden" id="website-total-field" name="Geschatte websiteprijs" />
+
           <label for="bericht">Bericht
             <textarea id="bericht" name="Bericht" rows="4"></textarea>
           </label>
@@ -474,6 +481,29 @@
     (function () {
       var select = document.getElementById('pakket');
       var website = document.getElementById('website-veld');
+      var pages = document.getElementById('extra-paginas');
+      var totalOut = document.getElementById('website-total');
+      var totalField = document.getElementById('website-total-field');
+
+      function fmt(n) { return '€' + n.toLocaleString('nl-NL'); }
+
+      function updateTotal() {
+        if (!website) return;
+        var hasWebsite = website.selectedIndex > 0;
+        var extra = pages ? Math.max(0, parseInt(pages.value, 10) || 0) : 0;
+        var total = (hasWebsite ? 995 : 0) + extra * 250;
+        if (totalField) totalField.value = total > 0 ? fmt(total) + ' excl. btw' : '';
+        if (totalOut) {
+          if (total > 0) {
+            totalOut.hidden = false;
+            totalOut.textContent = 'Geschatte websiteprijs: ' + fmt(total) + ' excl. btw';
+          } else {
+            totalOut.hidden = true;
+            totalOut.textContent = '';
+          }
+        }
+      }
+
       if (select) {
         document.querySelectorAll('[data-pakket]').forEach(function (btn) {
           btn.addEventListener('click', function () {
@@ -485,9 +515,13 @@
         document.querySelectorAll('[data-website]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             website.selectedIndex = 1;
+            updateTotal();
           });
         });
+        website.addEventListener('change', updateTotal);
       }
+      if (pages) pages.addEventListener('input', updateTotal);
+      updateTotal();
     })();
   </script>
 
