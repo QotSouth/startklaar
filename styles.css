@@ -779,14 +779,13 @@ a { color: var(--purple); text-decoration: none; }
   .features-2col { grid-template-columns: 1fr 1fr; }
 }
 
-@media (min-width: 900px) {
-  .main-nav { display: flex; }
-
+/* Hero naast de visual zodra er genoeg breedte is */
+@media (min-width: 760px) {
   .hero-inner {
     display: grid;
     grid-template-columns: 1.05fr .95fr;
     align-items: center;
-    gap: 50px;
+    gap: 44px;
     text-align: left;
   }
   .hero-text h1 { margin-left: 0; margin-right: 0; max-width: 18ch; }
@@ -794,7 +793,11 @@ a { color: var(--purple); text-decoration: none; }
   .hero-text .hero-ctas { margin-left: 0; justify-content: flex-start; }
   .hero-text .hero-points { justify-content: flex-start; }
   .hero-visual { display: block; position: relative; padding: 10px 30px 40px 10px; }
+}
 
+@media (min-width: 900px) {
+  .main-nav { display: flex; }
+  .hero-inner { gap: 50px; }
   .recognize-list { grid-template-columns: repeat(4, 1fr); }
   .audience-grid { grid-template-columns: repeat(4, 1fr); }
   .needs-grid { grid-template-columns: repeat(3, 1fr); }
