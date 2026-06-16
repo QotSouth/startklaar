@@ -201,8 +201,15 @@ a { color: var(--purple); text-decoration: none; }
   font-weight: 800;
 }
 
-/* ---------- Hero visual (CSS-mockup) ---------- */
+/* ---------- Hero visual (afbeelding met CSS-mockup als terugval) ---------- */
 .hero-visual { display: none; }
+.hero-img { display: none; width: 100%; height: auto; }
+.hero-visual.has-img { display: block; max-width: 460px; margin: 18px auto 0; }
+.hero-visual.has-img .hero-img { display: block; }
+.hero-visual.has-img .hero-mock { display: none; }
+@media (min-width: 760px) {
+  .hero-visual.has-img { max-width: none; margin: 0; }
+}
 
 .mock-browser {
   position: relative;
