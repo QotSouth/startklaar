@@ -211,17 +211,7 @@ a { color: var(--purple); text-decoration: none; }
 .audience-card h3 {
   font-size: 1.12rem;
   margin-bottom: 8px;
-  padding-left: 18px;
-  position: relative;
   color: var(--purple);
-}
-.audience-card h3::before {
-  content: "";
-  position: absolute;
-  left: 0; top: .52em;
-  width: 9px; height: 9px;
-  background: var(--orange);
-  border-radius: 50%;
 }
 .audience-card p { color: var(--body); font-size: .97rem; }
 
