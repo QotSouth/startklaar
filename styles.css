@@ -483,9 +483,26 @@ a { color: var(--purple); text-decoration: none; }
 .website-content { text-align: left; }
 .website-content h2 { color: #fff; text-align: left; }
 .website-lead { font-size: 1.15rem; font-weight: 600; margin-top: 8px; color: rgba(255,255,255,.9); }
-.website-tiers { list-style: none; padding: 0; margin: 10px 0 6px; display: grid; gap: 6px; }
-.website-tiers li { color: rgba(255,255,255,.9); font-size: .98rem; }
-.website-desc { color: rgba(255,255,255,.85); margin: 4px 0 4px; max-width: 38ch; }
+.website-tiers {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 26px;
+  display: grid;
+  gap: 14px;
+}
+.tier {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.tier-name { font-weight: 700; color: #fff; font-size: 1.05rem; }
+.tier-price { font-weight: 800; color: #fff; font-size: 1.25rem; white-space: nowrap; }
+.tier-price span { font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.75); margin-left: 4px; }
+.tier-main { padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.18); }
+.tier-main .tier-name { font-size: 1.35rem; }
+.tier-main .tier-price { font-size: 2rem; }
+.tier-main .tier-price span { font-size: .85rem; }
 .website-notes {
   grid-column: 1 / -1;
   margin-top: 6px;
