@@ -198,6 +198,33 @@ a { color: var(--purple); text-decoration: none; }
   font-weight: 800;
 }
 
+/* ---------- Voor wie? ---------- */
+.section-audience { text-align: center; }
+.audience-text {
+  margin: 16px auto 0;
+  max-width: 60ch;
+  color: var(--body);
+  font-size: 1.05rem;
+}
+.chips {
+  list-style: none;
+  padding: 0;
+  margin: 26px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.chips li {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  font-weight: 600;
+  font-size: .92rem;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid #e2d6f4;
+}
+
 /* ---------- Herken je dit ---------- */
 .recognize-list {
   list-style: none;
