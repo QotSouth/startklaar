@@ -198,32 +198,23 @@ a { color: var(--purple); text-decoration: none; }
   font-weight: 800;
 }
 
-/* ---------- Voor wie? ---------- */
-.section-audience { text-align: center; }
-.audience-text {
-  margin: 16px auto 0;
-  max-width: 60ch;
-  color: var(--body);
-  font-size: 1.05rem;
+/* ---------- Perfect voor ---------- */
+.section-audience h2 { text-align: center; }
+.audience-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 40px;
 }
-.chips {
-  list-style: none;
-  padding: 0;
-  margin: 26px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.audience-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow);
 }
-.chips li {
-  background: var(--purple-light);
-  color: var(--purple-dark);
-  font-weight: 600;
-  font-size: .92rem;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid #e2d6f4;
-}
+.audience-icon { font-size: 1.4rem; display: block; margin-bottom: 10px; }
+.audience-card h3 { font-size: 1.15rem; margin-bottom: 6px; color: var(--ink); }
+.audience-card p { color: var(--body); font-size: .97rem; }
 
 /* ---------- Herken je dit ---------- */
 .recognize-list {
@@ -612,6 +603,7 @@ a { color: var(--purple); text-decoration: none; }
   .hero { padding: 84px 0 92px; }
   .hero-ctas { flex-direction: row; justify-content: center; max-width: none; }
   .needs-grid { grid-template-columns: 1fr 1fr; }
+  .audience-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr 1fr; }
   .print-grid { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
@@ -622,6 +614,7 @@ a { color: var(--purple); text-decoration: none; }
 @media (min-width: 900px) {
   .main-nav { display: flex; }
   .recognize-list { grid-template-columns: repeat(4, 1fr); }
+  .audience-grid { grid-template-columns: repeat(4, 1fr); }
   .needs-grid { grid-template-columns: repeat(3, 1fr); }
   .cards { grid-template-columns: repeat(3, 1fr); align-items: start; }
   .card-featured { transform: translateY(-12px); }
