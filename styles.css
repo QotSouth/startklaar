@@ -426,6 +426,60 @@ a { color: var(--purple); text-decoration: none; }
 .features-no li::before { content: "✕"; color: #c9c3d6; }
 .features-2col { gap: 12px; }
 
+/* ---------- Tooltip / uitleg ---------- */
+.tip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: help;
+  outline: none;
+}
+.tip-term { border-bottom: 1px dotted currentColor; }
+.tip-mark {
+  width: 16px; height: 16px;
+  flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--purple); color: #fff;
+  border-radius: 50%;
+  font-size: 11px; font-weight: 700; line-height: 1;
+}
+.tip-bubble {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  width: max-content;
+  max-width: 240px;
+  background: var(--ink);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 9px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(20,8,50,.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity .16s ease, transform .16s ease;
+  z-index: 10;
+}
+.tip-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%; left: 16px;
+  border: 6px solid transparent;
+  border-top-color: var(--ink);
+}
+.tip-wrap:hover .tip-bubble,
+.tip-wrap:focus .tip-bubble,
+.tip-wrap:focus-within .tip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.tip-wrap:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 4px; }
+
 /* ---------- Pakket-pijlers ---------- */
 .pillars {
   display: grid;
