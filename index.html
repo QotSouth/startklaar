@@ -292,9 +292,10 @@
             <h2>Ook een website nodig?</h2>
             <p class="website-lead">One-page website</p>
             <p class="price price-white">&euro;995 <span>excl. btw</span></p>
+            <p class="website-standalone">Ook afzonderlijk verkrijgbaar &mdash; je hoeft geen pakket af te nemen.</p>
             <p class="website-desc">Voor ondernemers die ook online professioneel zichtbaar willen zijn.</p>
             <p class="delivery">Online vanaf 5 werkdagen na ontvangst van alle benodigde informatie.</p>
-            <a href="#contact" class="btn btn-cta btn-lg" data-pakket="WEBSITE">Voeg een website toe</a>
+            <a href="#contact" class="btn btn-cta btn-lg" data-website="1">Kies website</a>
           </div>
           <div class="website-lists">
             <div>
@@ -332,28 +333,28 @@
         <ol class="steps">
           <li class="step">
             <span class="step-num">1</span>
-            <h3 class="step-title">Kennismaking</h3>
-            <p>We bespreken jouw activiteit, doelgroep en aanbod.</p>
+            <h3 class="step-title">Kies wat je nodig hebt</h3>
+            <p>Kies een pakket of een website.</p>
           </li>
           <li class="step">
             <span class="step-num">2</span>
-            <h3 class="step-title">Aanleveren gegevens</h3>
-            <p>Je bezorgt ons je contactgegevens, foto&rsquo;s en eventuele bestaande materialen.</p>
+            <h3 class="step-title">Bevestig je aanvraag</h3>
+            <p>Vul het aanvraagformulier in. Na je aanvraag ontvang je de betaalgegevens per e-mail.</p>
           </li>
           <li class="step">
             <span class="step-num">3</span>
-            <h3 class="step-title">Uitwerking</h3>
-            <p>Wij maken alles voor je klaar.</p>
+            <h3 class="step-title">Lever je informatie aan</h3>
+            <p>Via een eenvoudig intakeformulier verzamelen we alle informatie die nodig is om aan de slag te gaan.</p>
           </li>
           <li class="step">
             <span class="step-num">4</span>
-            <h3 class="step-title">Feedback</h3>
-            <p>Je geeft feedback en we verwerken de afgesproken correcties.</p>
+            <h3 class="step-title">Wij gaan aan de slag</h3>
+            <p>We werken jouw materiaal of website uit en houden je op de hoogte van de voortgang.</p>
           </li>
           <li class="step">
             <span class="step-num">5</span>
-            <h3 class="step-title">Oplevering</h3>
-            <p>Je ontvangt alle bestanden klaar voor gebruik.</p>
+            <h3 class="step-title">Feedback &amp; oplevering</h3>
+            <p>Na feedback ontvang je alles gebruiksklaar of gaat je website online.</p>
           </li>
         </ol>
       </div>
@@ -438,9 +439,13 @@
               <option value="START">START — &euro;295</option>
               <option value="STARTKLAAR" selected>STARTKLAAR — &euro;595</option>
               <option value="ZICHTBAAR">ZICHTBAAR — &euro;895</option>
-              <option value="WEBSITE">WEBSITE — &euro;995</option>
               <option value="Vraag">Ik heb een vraag</option>
             </select>
+          </label>
+
+          <label class="checkbox-row" for="website-veld">
+            <input type="checkbox" id="website-veld" name="Website" value="Ja, ook een one-page website (vanaf &euro;995)" />
+            <span>Ik wil ook een website (one-page, vanaf &euro;995)</span>
           </label>
 
           <label for="bericht">Bericht (optioneel)
@@ -471,12 +476,21 @@
   <script>
     (function () {
       var select = document.getElementById('pakket');
-      if (!select) return;
-      document.querySelectorAll('[data-pakket]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          select.value = btn.getAttribute('data-pakket');
+      var website = document.getElementById('website-veld');
+      if (select) {
+        document.querySelectorAll('[data-pakket]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            select.value = btn.getAttribute('data-pakket');
+          });
         });
-      });
+      }
+      if (website) {
+        document.querySelectorAll('[data-website]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            website.checked = true;
+          });
+        });
+      }
     })();
   </script>
 
