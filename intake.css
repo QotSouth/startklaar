@@ -10,79 +10,128 @@
   font-size: .92rem;
   color: var(--muted);
 }
-.intake-main { padding: 40px 0 80px; }
-.intake-container { max-width: 860px; }
 
-.intake-head { margin-bottom: 30px; }
-.intake-head h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
-.intake-head p { color: var(--body); margin-top: 10px; max-width: 60ch; }
+/* ============================================================
+   SCAN (interactieve stapsgewijze intake)
+   ============================================================ */
+.scan-body { background: var(--off); min-height: 100vh; }
 
-.req { color: var(--orange); font-weight: 700; }
-.opt { color: var(--muted); font-weight: 500; font-size: .85em; }
-
-/* ---------- Formulierblokken ---------- */
-.block {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 26px 24px;
-  margin: 0 0 22px;
+.scan-progress {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 5px;
+  background: var(--line);
 }
-.block legend {
+.scan-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--purple), var(--orange));
+  transition: width .45s cubic-bezier(.22,.61,.36,1);
+}
+
+.scan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 22px;
+}
+.scan-step { font-weight: 600; font-size: .9rem; color: var(--muted); }
+
+.scan-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 22px 80px;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ---------- Start ---------- */
+.scan-stage { display: grid; place-items: center; padding: 30px 0; }
+.scan-intro { text-align: center; max-width: 600px; }
+.scan-intro h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin: 14px 0 16px; }
+.intro-text { color: var(--body); font-size: 1.08rem; margin-bottom: 28px; }
+.intro-sub { color: var(--muted); font-size: .9rem; margin-top: 16px; }
+
+.q-kicker {
+  display: inline-block;
   font-weight: 800;
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
   color: var(--purple);
-  font-size: 1.15rem;
-  padding: 0 0 4px;
-  letter-spacing: -.01em;
+  background: var(--purple-light);
+  padding: 6px 14px;
+  border-radius: 999px;
 }
-.block label {
+
+/* ---------- Vraagpanelen ---------- */
+.step-panel { display: none; }
+.step-panel.active { display: block; animation: stepIn .42s cubic-bezier(.22,.61,.36,1); }
+.step-panel.active.from-left { animation-name: stepInLeft; }
+@keyframes stepIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes stepInLeft { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: none; } }
+
+.q-title {
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+  margin: 18px 0 6px;
+  line-height: 1.15;
+}
+.q-help { color: var(--muted); margin-bottom: 4px; }
+.q-fields { margin-top: 22px; display: grid; gap: 16px; }
+
+.q-fields label {
   display: grid;
   gap: 7px;
   font-weight: 600;
   color: var(--ink);
   font-size: .95rem;
-  margin-top: 16px;
 }
-.block legend + label,
-.block legend + .grid-2 { margin-top: 14px; }
+.req { color: var(--orange); font-weight: 700; }
+.opt { color: var(--muted); font-weight: 500; font-size: .85em; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
 .grid-2 { display: grid; gap: 16px; }
-@media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 600px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 
-.block input[type="text"],
-.block input[type="email"],
-.block input[type="tel"],
-.block input[type="url"],
-.block select,
-.block textarea {
+.q-fields input[type="text"],
+.q-fields input[type="email"],
+.q-fields input[type="tel"],
+.q-fields input[type="url"],
+.q-fields select,
+.q-fields textarea {
   font: inherit;
   color: var(--ink);
-  background: var(--off);
+  background: #fff;
   border: 1.5px solid var(--line);
   border-radius: var(--radius-sm);
-  padding: 12px 14px;
+  padding: 14px 16px;
   width: 100%;
 }
-.block textarea { resize: vertical; }
-.block input:focus,
-.block select:focus,
-.block textarea:focus {
+.q-fields input,
+.q-fields textarea { font-size: 1.05rem; }
+.q-fields textarea { resize: vertical; line-height: 1.5; }
+.q-fields input:focus,
+.q-fields select:focus,
+.q-fields textarea:focus {
   outline: none;
   border-color: var(--purple);
-  background: #fff;
   box-shadow: 0 0 0 3px rgba(107,47,181,.14);
 }
-.block select {
+.q-fields .invalid { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,106,43,.16); }
+.q-fields select {
   -webkit-appearance: none;
   appearance: none;
-  padding-right: 44px;
+  padding-right: 46px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b6478' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 16px center;
+  background-position: right 18px center;
 }
 
-.field-label { font-weight: 600; color: var(--ink); font-size: .95rem; margin: 18px 0 10px; }
 .counter {
   display: inline-block;
   background: var(--purple-light);
@@ -94,23 +143,22 @@
   margin-left: 6px;
 }
 
-/* ---------- Keuzes (checkbox / radio) ---------- */
+/* ---------- Keuzes ---------- */
 .choice-grid { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
-@media (min-width: 640px) { .choice-grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
-.choice-row { display: flex; flex-wrap: wrap; gap: 10px; }
-
+@media (min-width: 600px) { .choice-grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+.choice-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .choice {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 10px;
-  margin: 0 !important;
-  background: var(--off);
+  background: #fff;
   border: 1.5px solid var(--line);
   border-radius: var(--radius-sm);
-  padding: 11px 14px;
+  padding: 13px 16px;
   cursor: pointer;
-  font-weight: 500 !important;
+  font-weight: 500;
+  font-size: .98rem;
   transition: border-color .12s ease, background .12s ease;
 }
 .choice:hover { border-color: var(--purple); }
@@ -123,7 +171,7 @@
   font: inherit;
   font-size: .9rem;
   color: var(--body);
-  background: var(--off);
+  background: #fff;
   border: 1.5px dashed var(--line);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
@@ -143,11 +191,28 @@
 }
 .upload-note { color: var(--muted); font-size: .85rem; margin-top: 14px; }
 
-.form-error { color: var(--orange-dark); font-weight: 600; text-align: center; margin: 4px 0 14px; }
-.btn-sm { padding: 10px 18px; font-size: .92rem; }
+/* ---------- Navigatie ---------- */
+.wizard-error { color: var(--orange-dark); font-weight: 600; margin: 18px 0 0; }
+.wizard-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+.wizard-nav .btn { min-width: 170px; }
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 6px;
+  margin-right: auto;
+}
+.btn-back:hover { color: var(--purple); }
 
 /* ---------- Bevestiging ---------- */
-.thanks { display: grid; place-items: center; padding: 30px 0; }
 .thanks-card {
   background: #fff;
   border: 1px solid var(--line);
@@ -169,9 +234,19 @@
 .thanks-card p { color: var(--body); margin-bottom: 8px; }
 .thanks-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
 
+@media (prefers-reduced-motion: reduce) {
+  .scan-bar { transition: none; }
+  .step-panel.active { animation: none; }
+}
+
 /* ============================================================
    ADMIN
    ============================================================ */
+.intake-main { padding: 40px 0 80px; }
+.intake-head { margin-bottom: 30px; }
+.intake-head h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+.intake-head p { color: var(--body); margin-top: 10px; max-width: 60ch; }
+.btn-sm { padding: 10px 18px; font-size: .92rem; }
 .admin-toolbar {
   display: flex;
   align-items: center;
