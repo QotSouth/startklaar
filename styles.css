@@ -481,7 +481,7 @@ a { color: var(--purple); text-decoration: none; }
   box-shadow: var(--shadow-lg);
 }
 .website-content { text-align: left; }
-.website-content h2 { color: #fff; text-align: left; }
+.website-content h2 { color: #fff; text-align: left; margin-bottom: 14px; }
 .website-lead { font-size: 1.15rem; font-weight: 600; margin-top: 8px; color: rgba(255,255,255,.9); }
 .website-tiers {
   list-style: none;
@@ -700,7 +700,7 @@ a { color: var(--purple); text-decoration: none; }
   .needs-grid { grid-template-columns: repeat(3, 1fr); }
   .cards { grid-template-columns: repeat(3, 1fr); align-items: start; }
   .card-featured { transform: translateY(-12px); }
-  .website-box { grid-template-columns: 1fr 1.2fr; align-items: center; padding: 48px 44px; }
+  .website-box { grid-template-columns: 0.8fr 1.3fr; align-items: center; gap: 52px; padding: 48px 44px; }
   .website-content { text-align: left; }
   .steps { grid-template-columns: repeat(5, 1fr); }
   .print-grid { grid-template-columns: repeat(5, 1fr); }
