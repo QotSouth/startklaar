@@ -48,7 +48,10 @@ export default async function AdminEditProjectPage({
     notFound();
   }
 
-  const client = (project.clients ?? null) as {
+  const clientsRel = project.clients as unknown;
+  const client = (Array.isArray(clientsRel)
+    ? clientsRel[0] ?? null
+    : clientsRel ?? null) as {
     name: string | null;
     email: string;
     phone: string | null;
