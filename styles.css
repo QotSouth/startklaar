@@ -492,6 +492,54 @@ a { color: var(--purple); text-decoration: none; }
 .price-white { color: #fff; }
 .card-featured .price { color: var(--orange); }
 .card-tagline { color: var(--muted); font-size: .95rem; margin-top: 16px; }
+.card-result { color: var(--purple); font-weight: 600; font-size: .98rem; line-height: 1.4; margin-top: 14px; }
+.card-featured .card-result { color: var(--orange-dark); }
+.card-forwie { color: var(--muted); font-size: .92rem; margin: 4px 0 16px; }
+.card-allof {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: .95rem;
+  background: var(--purple-light);
+  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+  margin: 4px 0 16px;
+}
+.cards-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: .92rem;
+  max-width: 680px;
+  margin: 28px auto 0;
+}
+
+/* ---------- Add-ons ---------- */
+.addons { list-style: none; padding: 0; margin: 34px 0 0; display: grid; gap: 12px; }
+.addons li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+}
+.addon-name { font-weight: 600; color: var(--ink); }
+.addon-price { font-weight: 800; color: var(--orange); white-space: nowrap; }
+
+/* ---------- Intake-waarde ---------- */
+.intake-value {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--purple);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  margin: 0 0 22px;
+  box-shadow: var(--shadow);
+}
+.intake-value p { color: var(--body); }
+.intake-value strong { color: var(--ink); }
+.contact-form .opt { color: var(--muted); font-weight: 500; font-size: .85em; }
 
 /* ---------- Pakketkaart-inhoud (altijd zichtbaar) ---------- */
 .card-content { flex: 1; margin-bottom: 22px; }
