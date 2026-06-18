@@ -361,6 +361,35 @@ a { color: var(--purple); text-decoration: none; }
   min-height: 96px;
 }
 
+/* ---------- Je uitstraling ---------- */
+.section-uitstraling {
+  background: linear-gradient(180deg, #f5f0fc 0%, #ece3f8 100%);
+  text-align: center;
+}
+.uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: var(--ink); line-height: 1.2; }
+.uit-title .accent { color: var(--purple); }
+.uit-divider { display: block; width: 56px; height: 4px; border-radius: 999px; background: var(--orange); margin: 20px auto 22px; }
+.uit-sub { color: var(--muted); max-width: 52ch; margin: 0 auto; font-size: 1.05rem; }
+.uit-sub .accent { color: var(--purple); font-weight: 600; }
+.prob-grid { display: grid; gap: 22px; margin-top: 48px; text-align: left; }
+.prob-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+}
+.prob-icon {
+  width: 54px; height: 54px;
+  display: grid; place-items: center;
+  background: var(--purple-light);
+  border-radius: 50%;
+  margin-bottom: 18px;
+}
+.prob-icon svg { width: 26px; height: 26px; }
+.prob-card h3 { font-size: 1.12rem; color: var(--ink); }
+.prob-line { display: block; width: 28px; height: 3px; border-radius: 2px; background: var(--purple); margin: 12px 0 14px; }
+.prob-card p { color: var(--body); font-size: .96rem; }
+
 /* ---------- Dit heb je nodig ---------- */
 .needs-grid {
   display: grid;
@@ -864,6 +893,7 @@ a { color: var(--purple); text-decoration: none; }
   .hero { padding: 84px 0 92px; }
   .hero-ctas { flex-direction: row; justify-content: center; max-width: none; }
   .needs-grid { grid-template-columns: 1fr 1fr; }
+  .prob-grid { grid-template-columns: 1fr 1fr; }
   .audience-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr 1fr; }
   .print-grid { grid-template-columns: 1fr 1fr; }
@@ -899,6 +929,8 @@ a { color: var(--purple); text-decoration: none; }
   .main-nav { display: flex; }
   .hero-inner { gap: 50px; }
   .recognize-list { grid-template-columns: repeat(4, 1fr); }
+  .prob-grid { grid-template-columns: repeat(4, 1fr); align-items: start; }
+  .prob-card:nth-child(even) { margin-top: 54px; }
   .audience-grid { grid-template-columns: repeat(4, 1fr); }
   .needs-grid { grid-template-columns: repeat(3, 1fr); }
   .cards { grid-template-columns: repeat(3, 1fr); align-items: start; }
