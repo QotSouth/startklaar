@@ -1052,27 +1052,6 @@ a { color: var(--purple); text-decoration: none; }
 .mock-phone { animation: floaty 5s ease-in-out infinite; }
 .mock-card { animation: floaty 6.5s ease-in-out .8s infinite; }
 
-/* ---------- Decoratieve pijltjes ---------- */
-.section-audience,
-.section-uitstraling,
-.section-needs { position: relative; }
-.section-audience > .container,
-.section-uitstraling > .container,
-.section-needs > .container { position: relative; z-index: 1; }
-.deco {
-  position: absolute;
-  pointer-events: none;
-  opacity: .4;
-  z-index: 0;
-  display: none;
-}
-.deco svg { display: block; width: 100%; height: auto; }
-.deco-tl { top: 34px; left: 26px; width: 42px; }
-.deco-br { bottom: 30px; right: 38px; width: 84px; }
-@media (min-width: 1000px) {
-  .deco { display: block; }
-}
-
 /* ---------- Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
