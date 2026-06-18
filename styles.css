@@ -525,7 +525,11 @@ a { color: var(--purple); text-decoration: none; }
   padding: 16px 20px;
 }
 .addon-name { font-weight: 600; color: var(--ink); }
+.addon-sub { color: var(--muted); font-weight: 500; font-size: .82em; margin-left: 6px; }
 .addon-price { font-weight: 800; color: var(--orange); white-space: nowrap; }
+.upgrade-block { max-width: 560px; margin: 38px auto 0; }
+.upgrade-title { text-align: center; font-size: 1.15rem; color: var(--ink); }
+.upgrade-block .addons { margin-top: 16px; }
 
 /* ---------- Intake-waarde ---------- */
 .intake-value {
@@ -985,7 +989,7 @@ a { color: var(--purple); text-decoration: none; }
   .audience-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr 1fr; }
   .print-grid { grid-template-columns: 1fr 1fr; }
-  .steps { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: repeat(3, 1fr); }
   .website-lists { grid-template-columns: 1fr 1fr; }
   .features-2col { grid-template-columns: 1fr 1fr; }
   .extras { grid-template-columns: repeat(3, 1fr); }
@@ -1024,7 +1028,7 @@ a { color: var(--purple); text-decoration: none; }
   .card-featured { transform: translateY(-12px); }
   .website-box { grid-template-columns: 0.85fr 1.1fr; align-items: center; gap: 130px; padding: 48px 44px; }
   .website-content { text-align: left; }
-  .steps { grid-template-columns: repeat(5, 1fr); }
+  .steps { grid-template-columns: repeat(3, 1fr); }
   .print-grid { grid-template-columns: repeat(5, 1fr); }
   .print-item { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
@@ -1047,6 +1051,27 @@ a { color: var(--purple); text-decoration: none; }
 }
 .mock-phone { animation: floaty 5s ease-in-out infinite; }
 .mock-card { animation: floaty 6.5s ease-in-out .8s infinite; }
+
+/* ---------- Decoratieve pijltjes ---------- */
+.section-audience,
+.section-uitstraling,
+.section-needs { position: relative; }
+.section-audience > .container,
+.section-uitstraling > .container,
+.section-needs > .container { position: relative; z-index: 1; }
+.deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: .4;
+  z-index: 0;
+  display: none;
+}
+.deco svg { display: block; width: 100%; height: auto; }
+.deco-tl { top: 34px; left: 26px; width: 42px; }
+.deco-br { bottom: 30px; right: 38px; width: 84px; }
+@media (min-width: 1000px) {
+  .deco { display: block; }
+}
 
 /* ---------- Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
