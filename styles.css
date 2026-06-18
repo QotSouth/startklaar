@@ -303,16 +303,12 @@ a { color: var(--purple); text-decoration: none; }
 }
 .section-audience h2 { text-align: center; color: #fff; font-size: clamp(1.5rem, 3.5vw, 2rem); }
 .audience-eyebrow {
-  width: fit-content;
-  max-width: 100%;
   margin: 0 auto 26px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.22);
-  color: #fff;
-  font-weight: 600;
-  font-size: .9rem;
-  padding: 8px 18px;
-  border-radius: 999px;
+  color: rgba(255,255,255,.7);
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
   text-align: center;
 }
 .audience-grid {
