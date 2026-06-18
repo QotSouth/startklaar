@@ -537,6 +537,35 @@ a { color: var(--purple); text-decoration: none; }
 .addon-name { font-weight: 600; color: var(--ink); }
 .addon-sub { color: var(--muted); font-weight: 500; font-size: .82em; margin-left: 6px; }
 .addon-price { font-weight: 800; color: var(--orange); white-space: nowrap; }
+
+/* ---------- Add-on kaarten (met icoon + omschrijving) ---------- */
+.addon-grid { list-style: none; padding: 0; margin: 40px auto 0; max-width: 880px; display: grid; gap: 14px; }
+.addon-grid li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 22px;
+}
+.addon-icon {
+  width: 56px; height: 56px;
+  flex: none;
+  display: grid; place-items: center;
+  background: var(--purple-light);
+  border-radius: 14px;
+}
+.addon-icon svg { width: 30px; height: 30px; }
+.addon-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.addon-body .addon-name { font-weight: 700; color: var(--ink); font-size: 1.05rem; }
+.addon-desc { color: var(--muted); font-size: .9rem; line-height: 1.4; }
+.addon-grid .addon-price { font-size: 1.05rem; }
+@media (max-width: 560px) {
+  .addon-grid li { flex-wrap: wrap; }
+  .addon-grid .addon-price { width: 100%; padding-left: 74px; }
+}
 .upgrade-block { max-width: 560px; margin: 38px auto 0; }
 .upgrade-title { text-align: center; font-size: 1.15rem; color: var(--ink); }
 .upgrade-block .addons { margin-top: 16px; }
