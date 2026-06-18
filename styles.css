@@ -366,7 +366,8 @@ a { color: var(--purple); text-decoration: none; }
 .uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: var(--ink); line-height: 1.2; text-align: center; }
 .uit-title .accent { color: var(--purple); }
 .uit-divider { display: block; width: 56px; height: 4px; border-radius: 999px; background: var(--orange); margin: 20px auto 22px; }
-.uit-sub { color: var(--muted); max-width: 52ch; margin: 0 auto; font-size: 1.05rem; text-align: center; }
+.uit-sub { color: #18122b; max-width: 52ch; margin: 0 auto; font-size: 1.05rem; text-align: center; }
+.section-contact .section-intro { color: #18122b; }
 .uit-sub .accent { color: var(--purple); font-weight: 600; }
 .prob-grid { display: grid; gap: 22px; margin-top: 48px; text-align: left; }
 .prob-card {
