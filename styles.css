@@ -360,7 +360,7 @@ a { color: var(--purple); text-decoration: none; }
 
 /* ---------- Je uitstraling ---------- */
 .section-uitstraling {
-  background: linear-gradient(180deg, #f5f0fc 0%, #ece3f8 100%);
+  background: #e7ddf6;
   text-align: center;
 }
 .uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: var(--ink); line-height: 1.2; }
