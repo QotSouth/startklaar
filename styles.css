@@ -363,10 +363,10 @@ a { color: var(--purple); text-decoration: none; }
   background: #e7ddf6;
   text-align: center;
 }
-.uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: var(--ink); line-height: 1.2; }
+.uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: var(--ink); line-height: 1.2; text-align: center; }
 .uit-title .accent { color: var(--purple); }
 .uit-divider { display: block; width: 56px; height: 4px; border-radius: 999px; background: var(--orange); margin: 20px auto 22px; }
-.uit-sub { color: var(--muted); max-width: 52ch; margin: 0 auto; font-size: 1.05rem; }
+.uit-sub { color: var(--muted); max-width: 52ch; margin: 0 auto; font-size: 1.05rem; text-align: center; }
 .uit-sub .accent { color: var(--purple); font-weight: 600; }
 .prob-grid { display: grid; gap: 22px; margin-top: 48px; text-align: left; }
 .prob-card {
@@ -388,21 +388,64 @@ a { color: var(--purple); text-decoration: none; }
 .prob-card p { color: var(--body); font-size: .96rem; }
 
 /* ---------- Dit heb je nodig ---------- */
+.section-needs { background: #f3edfb; }
 .needs-grid {
   display: grid;
   gap: 18px;
-  margin-top: 40px;
+  margin-top: 44px;
 }
 .need {
+  position: relative;
   background: #fff;
-  border: 1px solid var(--line);
-  border-top: 4px solid var(--purple);
   border-radius: var(--radius);
-  padding: 24px 22px;
+  padding: 32px 26px 28px;
   box-shadow: var(--shadow);
 }
-.need h3 { color: var(--purple); margin-bottom: 14px; }
-.need .features { margin: 0; }
+.need::before {
+  content: "";
+  position: absolute;
+  top: -5px; left: 50%;
+  transform: translateX(-50%);
+  width: 72px; height: 11px;
+  background: var(--purple);
+  border-radius: 999px;
+}
+.need-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.need-icon {
+  width: 52px; height: 52px;
+  flex: none;
+  display: grid; place-items: center;
+  background: var(--purple-light);
+  border-radius: 50%;
+}
+.need-icon svg { width: 26px; height: 26px; }
+.need-head h3 {
+  color: var(--ink);
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+.need-head h3::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 26px; height: 3px; border-radius: 2px;
+  background: var(--purple);
+}
+.need .features { margin: 0; gap: 13px; }
+.need .features li { padding-left: 30px; color: var(--body); }
+.need .features li::before {
+  content: "";
+  position: absolute; left: 0; top: 1px;
+  width: 18px; height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b2fb5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M8.5 12.5l2.3 2.3 4.7-4.9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 /* ---------- Pakketten / Cards ---------- */
 .cards {
