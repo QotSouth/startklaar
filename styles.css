@@ -302,6 +302,13 @@ a { color: var(--purple); text-decoration: none; }
   color: #fff;
 }
 .section-audience h2 { text-align: center; color: #fff; font-size: clamp(1.5rem, 3.5vw, 2rem); }
+.audience-intro {
+  text-align: center;
+  color: rgba(255,255,255,.82);
+  font-size: 1.05rem;
+  max-width: 48ch;
+  margin: 14px auto 0;
+}
 .audience-grid {
   display: grid;
   gap: 22px;
