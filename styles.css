@@ -295,47 +295,44 @@ a { color: var(--purple); text-decoration: none; }
 .mock-card span { color: #fff; font-weight: 800; font-size: .92rem; position: relative; z-index: 1; }
 
 /* ---------- Perfect voor ---------- */
-.section-audience {
-  background:
-    radial-gradient(900px 480px at 50% -10%, rgba(255,255,255,.10), transparent 60%),
-    linear-gradient(150deg, #5a27a8 0%, #3e1c83 100%);
-  color: #fff;
-}
-.section-audience h2 { text-align: center; color: #fff; font-size: clamp(1.5rem, 3.5vw, 2rem); }
-.audience-eyebrow {
-  margin: 0 auto 26px;
-  color: rgba(255,255,255,.7);
-  font-weight: 700;
-  font-size: .8rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  text-align: center;
-}
+.section-audience { background: #f3edfb; }
+.section-audience h2 { text-align: center; color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.4rem); }
 .audience-grid {
   display: grid;
   gap: 22px;
-  margin-top: 50px;
+  margin-top: 44px;
 }
 .audience-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  background: #fff;
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: 30px 26px;
   text-align: left;
 }
 .audience-icon {
-  display: flex;
-  width: 52px;
-  height: 52px;
-  margin-bottom: 22px;
+  width: 54px; height: 54px;
+  display: grid; place-items: center;
+  background: var(--purple-light);
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
-.audience-icon svg { width: 100%; height: 100%; }
+.audience-icon svg { width: 26px; height: 26px; }
 .audience-card h3 {
   font-size: 1.12rem;
-  margin-bottom: 10px;
-  color: #fff;
+  color: var(--ink);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  position: relative;
 }
-.audience-card p { color: rgba(255,255,255,.78); font-size: .97rem; }
+.audience-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 28px; height: 3px;
+  border-radius: 2px;
+  background: var(--purple);
+}
+.audience-card p { color: var(--body); font-size: .97rem; }
 
 /* ---------- Herken je dit ---------- */
 .recognize-list {
