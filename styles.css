@@ -571,6 +571,74 @@ a { color: var(--purple); text-decoration: none; }
   .addon-grid li { flex-wrap: wrap; }
   .addon-grid .addon-price { width: 100%; padding-left: 74px; }
 }
+/* ---------- Extra mogelijkheden: overzicht ---------- */
+.extra-head { text-align: center; max-width: 720px; margin: 0 auto; }
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: var(--purple-light);
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-pill svg { width: 17px; height: 17px; }
+.extra-head .uit-sub { margin-top: 16px; }
+.trust-row {
+  list-style: none;
+  padding: 0;
+  margin: 26px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 0;
+}
+.trust-row li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: .98rem;
+  padding: 0 22px;
+}
+.trust-row li + li { border-left: 1px solid var(--line); }
+.trust-check { width: 20px; height: 20px; flex: none; }
+.extra-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 44px auto 0;
+}
+.extra-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 26px 28px;
+}
+.extra-card-head { display: flex; align-items: center; gap: 16px; }
+.extra-card-icon {
+  width: 54px; height: 54px;
+  flex: none;
+  display: grid; place-items: center;
+  background: var(--purple-light);
+  border-radius: 14px;
+}
+.extra-card-icon svg { width: 28px; height: 28px; }
+.extra-card h3 { font-size: 1.25rem; color: var(--ink); }
+.extra-card p { color: var(--muted); margin-top: 14px; line-height: 1.5; }
+@media (max-width: 560px) {
+  .trust-row { flex-direction: column; align-items: center; }
+  .trust-row li + li { border-left: none; }
+}
+
 .upgrade-block { max-width: 560px; margin: 38px auto 0; }
 .upgrade-title { text-align: center; font-size: 1.15rem; color: var(--ink); }
 .upgrade-block .addons { margin-top: 16px; }
