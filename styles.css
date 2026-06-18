@@ -367,6 +367,7 @@ a { color: var(--purple); text-decoration: none; }
 .section-audience h2,
 .section-contact h2 { color: #18122b; }
 .uit-title .accent { color: var(--purple); }
+.accent-orange { color: var(--orange); }
 .uit-divider { display: block; width: 56px; height: 4px; border-radius: 999px; background: var(--orange); margin: 20px auto 22px; }
 .uit-sub { color: #18122b; max-width: 52ch; margin: 0 auto; font-size: 1.05rem; text-align: center; }
 .section-contact .section-intro { color: #18122b; }
