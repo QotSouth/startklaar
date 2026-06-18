@@ -551,13 +551,18 @@ a { color: var(--purple); text-decoration: none; }
   padding: 16px 22px;
 }
 .addon-icon {
-  width: 56px; height: 56px;
+  position: relative;
+  width: 64px; height: 64px;
   flex: none;
   display: grid; place-items: center;
   background: var(--purple-light);
   border-radius: 14px;
 }
-.addon-icon svg { width: 30px; height: 30px; }
+.addon-icon svg { width: 32px; height: 32px; }
+.addon-img { display: none; }
+.addon-icon.has-img { background: transparent; }
+.addon-icon.has-img .addon-img { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.addon-icon.has-img svg { display: none; }
 .addon-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .addon-body .addon-name { font-weight: 700; color: var(--ink); font-size: 1.05rem; }
 .addon-desc { color: var(--muted); font-size: .9rem; line-height: 1.4; }
