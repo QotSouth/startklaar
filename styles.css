@@ -534,6 +534,26 @@ a { color: var(--purple); text-decoration: none; }
 .upgrade-title { text-align: center; font-size: 1.15rem; color: var(--ink); }
 .upgrade-block .addons { margin-top: 16px; }
 
+/* ---------- Website-pagina: pagina-chips ---------- */
+.page-chips {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto 0;
+  max-width: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.page-chips li {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-weight: 600;
+  color: var(--purple-dark);
+}
+
 /* ---------- Intake-waarde ---------- */
 .intake-value {
   background: #fff;
