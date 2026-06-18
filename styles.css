@@ -295,21 +295,38 @@ a { color: var(--purple); text-decoration: none; }
 .mock-card span { color: #fff; font-weight: 800; font-size: .92rem; position: relative; z-index: 1; }
 
 /* ---------- Perfect voor ---------- */
-.section-audience h2 { text-align: center; }
+.section-audience {
+  background:
+    radial-gradient(900px 480px at 50% -10%, rgba(255,255,255,.10), transparent 60%),
+    linear-gradient(150deg, #5a27a8 0%, #3e1c83 100%);
+  color: #fff;
+}
+.section-audience h2 { text-align: center; color: #fff; font-size: clamp(1.5rem, 3.5vw, 2rem); }
 .audience-grid {
   display: grid;
-  gap: 18px;
-  margin-top: 40px;
+  gap: 22px;
+  margin-top: 50px;
 }
 .audience-card {
-  padding: 4px 0;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  text-align: left;
 }
+.audience-icon {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 22px;
+}
+.audience-icon svg { width: 100%; height: 100%; }
 .audience-card h3 {
   font-size: 1.12rem;
-  margin-bottom: 8px;
-  color: var(--purple);
+  margin-bottom: 10px;
+  color: #fff;
 }
-.audience-card p { color: var(--body); font-size: .97rem; }
+.audience-card p { color: rgba(255,255,255,.78); font-size: .97rem; }
 
 /* ---------- Herken je dit ---------- */
 .recognize-list {
