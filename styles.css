@@ -1,28 +1,33 @@
 /* ============================================================
    STARTKLAAR — styles.css
-   Mobiel-eerst, responsive. Wit + veel witruimte.
-   Donkergrijze tekst · paars als primaire accentkleur · oranje voor CTA's.
+   Mobiel-eerst, responsive. Warme look: cream + veel witruimte.
+   Charcoal tekst · oranje als primaire accentkleur · taupe/sand neutralen.
    ============================================================ */
 
 :root {
-  --purple:        #6b2fb5;
-  --purple-dark:   #531f95;
-  --purple-light:  #f3edfb;
-  --orange:        #ff6a2b;
-  --orange-dark:   #e9551a;
+  --purple:        #e8741e;   /* primaire accent → warm oranje */
+  --purple-dark:   #c75e12;
+  --purple-light:  #fbeede;   /* warme lichte tint voor pills */
+  --orange:        #e8741e;
+  --orange-dark:   #c75e12;
 
-  --ink:           #2b2b33;   /* donkergrijs voor koppen */
-  --body:          #4d4d57;   /* donkergrijs voor tekst */
-  --muted:         #6f6f7a;
-  --line:          #e6e4ec;
+  --charcoal:      #2f2e2c;   /* donkere merkkleur */
+  --charcoal-dark: #201f1d;
+
+  --ink:           #2c2c2e;   /* charcoal voor koppen */
+  --body:          #46454a;   /* tekst */
+  --muted:         #75726c;
+  --line:          #e7e1d6;
 
   --white:         #ffffff;
-  --off:           #f8f7fb;
+  --off:           #f5f0e7;   /* cream alt-achtergrond */
+  --sand:          #efe7d8;
+  --taupe:         #c9b79c;
 
   --radius:        16px;
   --radius-sm:     10px;
-  --shadow:        0 6px 24px rgba(43, 20, 84, 0.08);
-  --shadow-lg:     0 18px 50px rgba(43, 20, 84, 0.16);
+  --shadow:        0 6px 24px rgba(40, 28, 12, 0.10);
+  --shadow-lg:     0 18px 50px rgba(40, 28, 12, 0.18);
   --maxw:          1280px;
 }
 
@@ -33,7 +38,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   color: var(--body);
   background: var(--white);
   line-height: 1.65;
@@ -121,12 +126,22 @@ a { color: var(--purple); text-decoration: none; }
 }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; color: var(--ink); }
 .logo-mark {
-  width: 34px; height: 34px;
+  width: 30px; height: 30px;
   display: grid; place-items: center;
-  background: var(--purple); color: #fff;
-  border-radius: 9px; font-weight: 800; font-size: 1.1rem;
+  background: transparent; color: transparent;
+  font-size: 0;
+  position: relative;
 }
-.logo-text { font-size: 1.2rem; letter-spacing: -0.02em; }
+.logo-mark::before {
+  content: "";
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent var(--orange);
+  border-radius: 3px;
+}
+.logo-text { font-size: 1.25rem; letter-spacing: -0.03em; text-transform: lowercase; font-weight: 800; }
+.logo-footer .logo-mark::before { border-left-color: var(--orange); }
 
 .main-nav { display: none; align-items: center; gap: 26px; }
 .main-nav a { color: var(--body); font-weight: 600; font-size: .98rem; }
@@ -140,9 +155,9 @@ a { color: var(--purple); text-decoration: none; }
 /* ---------- Hero ---------- */
 .hero {
   background:
-    radial-gradient(1100px 500px at 15% -10%, rgba(255,106,43,.16), transparent 60%),
-    radial-gradient(1000px 600px at 100% 0%, rgba(107,47,181,.20), transparent 55%),
-    linear-gradient(180deg, var(--purple) 0%, var(--purple-dark) 100%);
+    radial-gradient(1100px 500px at 15% -10%, rgba(232,116,30,.28), transparent 60%),
+    radial-gradient(1000px 600px at 100% 0%, rgba(201,183,156,.18), transparent 55%),
+    linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-dark) 100%);
   color: #fff;
   padding: 64px 0 72px;
 }
@@ -215,7 +230,7 @@ a { color: var(--purple); text-decoration: none; }
   position: relative;
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 30px 60px rgba(20, 8, 50, .45);
+  box-shadow: 0 30px 60px rgba(30, 22, 10, .42);
   overflow: hidden;
   z-index: 1;
 }
@@ -224,15 +239,15 @@ a { color: var(--purple); text-decoration: none; }
   align-items: center;
   gap: 7px;
   padding: 11px 14px;
-  background: #f1eef7;
-  border-bottom: 1px solid #e4dff0;
+  background: #f1ece3;
+  border-bottom: 1px solid #e7e0d3;
 }
-.mock-bar i { width: 10px; height: 10px; border-radius: 50%; background: #cfc7e0; }
+.mock-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d4ccbe; }
 .mock-bar i:nth-child(1) { background: #ff6a5e; }
 .mock-bar i:nth-child(2) { background: #ffbd44; }
 .mock-bar i:nth-child(3) { background: #2bca52; }
 .mock-screen {
-  background: linear-gradient(150deg, var(--purple) 0%, var(--purple-dark) 100%);
+  background: linear-gradient(150deg, var(--charcoal) 0%, var(--charcoal-dark) 100%);
   padding: 26px 28px 30px;
   display: flex;
   flex-direction: column;
@@ -255,14 +270,14 @@ a { color: var(--purple); text-decoration: none; }
   background: #fff;
   border: 5px solid #1c1330;
   border-radius: 26px;
-  box-shadow: 0 24px 44px rgba(20, 8, 50, .5);
+  box-shadow: 0 24px 44px rgba(30, 22, 10, .46);
   padding: 16px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   z-index: 2;
-  background: linear-gradient(160deg, var(--purple) 0%, var(--purple-dark) 100%);
+  background: linear-gradient(160deg, var(--charcoal) 0%, var(--charcoal-dark) 100%);
 }
 .mock-notch { width: 42px; height: 6px; border-radius: 999px; background: rgba(255,255,255,.5); }
 .mock-p-h { width: 80%; height: 14px; border-radius: 5px; background: rgba(255,255,255,.92); margin-top: 6px; }
@@ -276,8 +291,8 @@ a { color: var(--purple); text-decoration: none; }
   width: 150px;
   height: 92px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #2a1850 0%, var(--purple) 100%);
-  box-shadow: 0 20px 40px rgba(20, 8, 50, .5);
+  background: linear-gradient(135deg, var(--charcoal-dark) 0%, var(--orange) 100%);
+  box-shadow: 0 20px 40px rgba(30, 22, 10, .46);
   display: flex;
   align-items: flex-end;
   padding: 14px;
@@ -295,7 +310,7 @@ a { color: var(--purple); text-decoration: none; }
 .mock-card span { color: #fff; font-weight: 800; font-size: .92rem; position: relative; z-index: 1; }
 
 /* ---------- Perfect voor ---------- */
-.section-audience { background: #f3edfb; }
+.section-audience { background: var(--sand); }
 .section-audience h2 { text-align: center; color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.4rem); }
 .audience-grid {
   display: grid;
@@ -360,17 +375,17 @@ a { color: var(--purple); text-decoration: none; }
 
 /* ---------- Je uitstraling ---------- */
 .section-uitstraling {
-  background: #e7ddf6;
+  background: var(--off);
   text-align: center;
 }
-.uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: #18122b; line-height: 1.2; text-align: center; }
+.uit-title { font-size: clamp(1.7rem, 4.5vw, 2.5rem); color: #2c2c2e; line-height: 1.2; text-align: center; }
 .section-audience h2,
-.section-contact h2 { color: #18122b; }
+.section-contact h2 { color: #2c2c2e; }
 .uit-title .accent { color: var(--purple); }
 .accent-orange { color: var(--orange); }
 .uit-divider { display: block; width: 56px; height: 4px; border-radius: 999px; background: var(--orange); margin: 20px auto 22px; }
-.uit-sub { color: #18122b; max-width: 52ch; margin: 0 auto; font-size: 1.05rem; text-align: center; }
-.section-contact .section-intro { color: #18122b; }
+.uit-sub { color: #2c2c2e; max-width: 52ch; margin: 0 auto; font-size: 1.05rem; text-align: center; }
+.section-contact .section-intro { color: #2c2c2e; }
 .uit-sub .accent { color: var(--purple); font-weight: 600; }
 .prob-grid { display: grid; gap: 22px; margin-top: 48px; text-align: left; }
 .prob-card {
@@ -392,7 +407,7 @@ a { color: var(--purple); text-decoration: none; }
 .prob-card p { color: var(--body); font-size: .96rem; }
 
 /* ---------- Dit heb je nodig ---------- */
-.section-needs { background: #f3edfb; }
+.section-needs { background: var(--sand); }
 .needs-grid {
   display: grid;
   gap: 18px;
@@ -987,7 +1002,7 @@ a { color: var(--purple); text-decoration: none; }
 /* ---------- Website sectie ---------- */
 .section-website { padding: 64px 0; }
 .website-box {
-  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+  background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-dark) 100%);
   border-radius: 24px;
   padding: 38px 28px;
   color: #fff;
@@ -1128,7 +1143,7 @@ a { color: var(--purple); text-decoration: none; }
 .faq details p { padding: 0 0 16px; color: var(--body); }
 
 /* ---------- Contact ---------- */
-.section-contact { background: var(--purple-light); }
+.section-contact { background: var(--sand); }
 .contact-form {
   margin-top: 34px;
   background: #fff;
@@ -1172,7 +1187,7 @@ a { color: var(--purple); text-decoration: none; }
   outline: none;
   border-color: var(--purple);
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(107,47,181,.14);
+  box-shadow: 0 0 0 3px rgba(232,116,30,.16);
 }
 .contact-form textarea { resize: vertical; }
 .website-total {
