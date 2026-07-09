@@ -315,7 +315,7 @@ a { color: var(--purple); text-decoration: none; }
 .mock-card span { color: #fff; font-weight: 800; font-size: .92rem; position: relative; z-index: 1; }
 
 /* ---------- Perfect voor ---------- */
-.section-audience { background: var(--sand); }
+.section-audience { background: var(--white); border-top: 1px solid var(--line); }
 .section-audience h2 { text-align: center; color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.4rem); }
 .audience-grid {
   display: grid;
