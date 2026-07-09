@@ -24,7 +24,7 @@
   --sand:          #efe7d8;
   --taupe:         #c9b79c;
 
-  --font-head:     'Space Grotesk', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-head:     'General Sans', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
   --radius:        16px;
   --radius-sm:     10px;
@@ -539,6 +539,29 @@ a { color: var(--purple); text-decoration: none; }
   font-size: .92rem;
   max-width: 680px;
   margin: 28px auto 0;
+}
+
+/* ---------- Twijfel je nog? ---------- */
+.doubt-block {
+  max-width: 680px;
+  margin: 40px auto 0;
+  text-align: center;
+  background: var(--off);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px 26px;
+}
+.doubt-title { font-size: 1.4rem; color: var(--ink); }
+.doubt-sub { color: var(--muted); max-width: 46ch; margin: 10px auto 0; }
+.doubt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+@media (max-width: 460px) {
+  .doubt-actions .btn { width: 100%; }
 }
 
 /* ---------- Add-ons ---------- */

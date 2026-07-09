@@ -27,7 +27,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -45,10 +47,9 @@
     "areaServed": "NL",
     "slogan": "Professioneel zichtbaar in 5 werkdagen.",
     "offers": [
-      { "@type": "Offer", "name": "START", "price": "295", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "STARTKLAAR", "price": "595", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "ZICHTBAAR", "price": "895", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "One-page website", "price": "995", "priceCurrency": "EUR" }
+      { "@type": "Offer", "name": "Logopakket", "price": "249", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Presentatie", "price": "595", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Website", "price": "995", "priceCurrency": "EUR" }
     ]
   }
   </script>
@@ -79,10 +80,10 @@
       <div class="container hero-inner">
         <div class="hero-text">
           <p class="eyebrow">Professioneel zichtbaar in 5 werkdagen.</p>
-          <h1>Alles wat je nodig hebt om professioneel zichtbaar te worden.</h1>
+          <h1>Alles wat je nodig hebt om snel professioneel zichtbaar te zijn.</h1>
           <p class="hero-sub">
             Logo, visitekaartjes en professioneel materiaal om klanten vertrouwen te geven.
-            Snel geregeld. Zonder gedoe.
+            Door ons snel geregeld. Zonder gedoe.
           </p>
           <div class="hero-ctas">
             <a href="#pakketten" class="btn btn-cta btn-lg">Bekijk de pakketten</a>
@@ -281,7 +282,7 @@
           <!-- MERKPAKKET -->
           <article class="card">
             <div class="card-head">
-              <h3>Merkpakket</h3>
+              <h3>Logopakket</h3>
               <p class="card-belofte">Een professionele eerste indruk</p>
               <p class="price">&euro;249 <span>excl. btw</span></p>
             </div>
@@ -295,19 +296,19 @@
                 <li>Alle digitale &amp; drukklare bestanden (PNG, SVG, PDF)</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-cta-outline btn-block" data-pakket="START">Ik wil het Merkpakket</a>
+            <a href="#contact" class="btn btn-cta-outline btn-block" data-pakket="START">Ik wil het Logopakket</a>
           </article>
 
           <!-- STARTKLAAR -->
           <article class="card card-featured">
             <span class="badge">Meest gekozen</span>
             <div class="card-head">
-              <h3>Startklaar</h3>
+              <h3>Presentatie</h3>
               <p class="card-belofte">Jezelf professioneel voorstellen</p>
-              <p class="price">&euro;495 <span>excl. btw</span></p>
+              <p class="price">&euro;595 <span>excl. btw</span></p>
             </div>
             <div class="card-content">
-              <p class="card-allof">Alles uit Merkpakket, plus:</p>
+              <p class="card-allof">Alles uit Logopakket, plus:</p>
               <ul class="features">
                 <li><span class="tip-wrap" tabindex="0" role="button" aria-label="Positionering — wat is dit?"><span class="tip-term">Positionering</span><span class="tip-mark" aria-hidden="true">?</span><span class="tip-bubble" role="tooltip">Helder krijgen waarom klanten voor jou moeten kiezen.</span></span></li>
                 <li>Elevator pitch</li>
@@ -319,18 +320,18 @@
                 <li>5 ondersteunende social media startposts</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-cta btn-block" data-pakket="STARTKLAAR">Ik word Startklaar</a>
+            <a href="#contact" class="btn btn-cta btn-block" data-pakket="STARTKLAAR">Ik kies Presentatie</a>
           </article>
 
           <!-- ZICHTBAAR -->
           <article class="card">
             <div class="card-head">
-              <h3>Zichtbaar</h3>
-              <p class="card-belofte">Je bent voor klanten ook online vindbaar</p>
+              <h3>Website</h3>
+              <p class="card-belofte">Je bedrijf professioneel online</p>
               <p class="price">&euro;995 <span>excl. btw</span></p>
             </div>
             <div class="card-content">
-              <p class="card-allof">Alles uit Startklaar, plus:</p>
+              <p class="card-allof">Alles uit Presentatie, plus:</p>
               <p class="detail-group-label">Professionele one-page website op maat</p>
               <ul class="features">
                 <li>Responsive design</li>
@@ -344,9 +345,18 @@
               <p class="card-note">Hosting &amp; domeinnaam vanaf &euro;99/jaar excl. btw.</p>
               <p class="card-link"><a href="website.html">Meerdere pagina&rsquo;s nodig? &rarr;</a></p>
             </div>
-            <a href="#contact" class="btn btn-cta-outline btn-block" data-pakket="ZICHTBAAR">Ik word Zichtbaar</a>
+            <a href="#contact" class="btn btn-cta-outline btn-block" data-pakket="ZICHTBAAR">Ik kies Website</a>
           </article>
 
+        </div>
+
+        <div class="doubt-block reveal">
+          <h3 class="doubt-title">Twijfel je nog?</h3>
+          <p class="doubt-sub">Heb je een korte vraag of wil je liever even overleggen? We helpen je graag vrijblijvend verder.</p>
+          <div class="doubt-actions">
+            <a href="#contact" class="btn btn-cta-outline">💬 Stuur een bericht</a>
+            <a href="#contact" class="btn btn-cta">📅 Plan een gesprek</a>
+          </div>
         </div>
       </div>
     </section>
@@ -426,8 +436,8 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2.5l1.7 4.4 4.4 1.7-4.4 1.7L11 14.7 9.3 10.3 4.9 8.6l4.4-1.7L11 2.5z"/><path d="M18 13l.9 2.3 2.3.9-2.3.9L18 19.4l-.9-2.3-2.3-.9 2.3-.9L18 13z"/></svg>
             Referenties
           </span>
-          <h2 class="uit-title">Recent <span class="accent">werk</span></h2>
-          <p class="uit-sub">Een greep uit de ondernemers en merken die we professioneel zichtbaar maakten.</p>
+          <h2 class="uit-title">Portfolio <span class="accent">in opbouw</span></h2>
+          <p class="uit-sub">We lanceren binnenkort met echte klantprojecten. Tot dan tonen we enkele voorbeeldprojecten die de mogelijkheden illustreren.</p>
         </div>
 
         <div class="cases-wrap reveal">
@@ -480,7 +490,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
           </button>
         </div>
-        <p class="cards-note">Sleep of swipe om alle referenties te bekijken.</p>
       </div>
     </section>
 
@@ -537,9 +546,9 @@
           <label for="pakket">Gewenst pakket
             <select id="pakket" name="Gewenst pakket">
               <option value="" selected>Kies je pakket</option>
-              <option value="START">START — &euro;249</option>
-              <option value="STARTKLAAR">STARTKLAAR — &euro;495</option>
-              <option value="ZICHTBAAR">ZICHTBAAR — &euro;995</option>
+              <option value="START">Logopakket — &euro;249</option>
+              <option value="STARTKLAAR">Presentatie — &euro;595</option>
+              <option value="ZICHTBAAR">Website — &euro;995</option>
             </select>
           </label>
 
@@ -612,7 +621,7 @@
         '.hero-text .hero-ctas', '.hero-text .hero-points', '.hero-visual',
         '.section h2', '.section-intro',
         '.audience-card', '.prob-card', '.need', '.card', '.website-box',
-        '.extra-head', '.extra-card', '.cases-wrap',
+        '.extra-head', '.extra-card', '.cases-wrap', '.doubt-block',
         '.step', '.extras li', '.why-text', '.faq details', '.contact-form'
       ];
 
