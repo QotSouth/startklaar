@@ -109,8 +109,8 @@ a { color: var(--purple); text-decoration: none; }
 .btn-cta-outline { background: #fff; color: var(--orange-dark); border-color: var(--orange); }
 .btn-cta-outline:hover { background: #fff4ee; }
 
-.btn-ghost { background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.55); }
-.btn-ghost:hover { background: rgba(255,255,255,.24); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: rgba(0,0,0,.18); }
+.btn-ghost:hover { background: rgba(0,0,0,.04); border-color: rgba(0,0,0,.32); }
 
 /* ---------- Header ---------- */
 .site-header {
@@ -155,36 +155,38 @@ a { color: var(--purple); text-decoration: none; }
 }
 .main-nav .nav-cta:hover { background: var(--orange-dark); color:#fff; }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (licht crème) ---------- */
 .hero {
-  background:
-    radial-gradient(1100px 500px at 15% -10%, rgba(232,116,30,.28), transparent 60%),
-    radial-gradient(1000px 600px at 100% 0%, rgba(201,183,156,.18), transparent 55%),
-    linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-dark) 100%);
-  color: #fff;
+  background: linear-gradient(160deg, #fbf7f0 0%, #f0e6d6 100%);
+  color: var(--ink);
   padding: 64px 0 72px;
 }
 .hero-inner { text-align: center; }
 .eyebrow {
   display: inline-block;
-  font-weight: 700;
+  font-weight: 600;
   font-size: .9rem;
-  letter-spacing: .02em;
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.25);
-  padding: 7px 16px;
+  letter-spacing: .01em;
+  background: #fff;
+  color: var(--orange);
+  border: 0;
+  padding: 9px 18px;
   border-radius: 999px;
   margin-bottom: 22px;
+  box-shadow: 0 4px 14px -6px rgba(0,0,0,.15);
 }
 .hero h1 {
-  color: #fff;
-  font-size: clamp(2.1rem, 7vw, 3.4rem);
-  font-weight: 800;
-  max-width: 16ch;
+  color: var(--ink);
+  font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
   margin: 0 auto 18px;
 }
+.hero h1 .hl { color: var(--orange); }
 .hero-sub {
-  color: rgba(255,255,255,.92);
+  color: var(--body);
   font-size: clamp(1.05rem, 2.6vw, 1.25rem);
   max-width: 52ch;
   margin: 0 auto 30px;
@@ -210,7 +212,7 @@ a { color: var(--purple); text-decoration: none; }
   position: relative;
   padding-left: 24px;
   font-weight: 600;
-  color: rgba(255,255,255,.95);
+  color: var(--body);
 }
 .hero-points li::before {
   content: "✓";
